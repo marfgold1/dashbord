@@ -83,7 +83,7 @@
                         <div class="row">
                             <div class="col">
                                 <i class="fas fa-address-book mr-2"></i>
-                                <strong>{{ __('Person in Chargew') }}&nbsp;</strong>
+                                <strong>{{ __('Person in Charge') }}&nbsp;</strong>
                                 @foreach( explode(';',$webinar->pic) as $pic )
                                     @if( !$pic=='' )
                                         <p class="m-0">

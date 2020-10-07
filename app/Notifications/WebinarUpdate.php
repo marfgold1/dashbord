@@ -47,8 +47,7 @@ class WebinarUpdate extends Notification
             ->line('Sayang sekali terjadi perubahan untuk webinar yang akan dilakukan.')
             ->line('Supaya tidak ketinggalan informasi, silahkan cek halaman webinar ya!')
             ->action('Cek Webinar', route('webinar.list'))
-            ->line('Terimakasih atas waktunya!')
-            ->salutation("Dengan Hormat,\n".config('app.name'));
+            ->line('Terimakasih atas waktunya!');
     }
 
     /**
