@@ -60,7 +60,7 @@ class WebinarsController extends Controller
             'topik' => 'required|string|max:255',
             'fakultas' => 'required|string|max:255',
             'narasumber' => 'required|string|max:255',
-            'pic' => 'required|string|regex:/^(\w+-\w+-\w+;)+$/|max:255',
+            'pic' => [ 'required', 'string', 'regex:/^([\w\s]+-[\w\s\/]+-[\w\s\/]+;)+$/', 'max:255' ],
             'kuota' => 'required|numeric',
             'jadwal' => 'required|date',
             'batas_pendaftaran' => 'required|date',

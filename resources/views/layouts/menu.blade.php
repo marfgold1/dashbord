@@ -20,11 +20,13 @@
                                 @endif
                                 @yield('content')
                                 <hr>
+                                <!--
                                 <div class="d-flex d-sm-flex d-xl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-xl-center align-items-xl-center">
                                     <i class="fas fa-language" style="margin-right: 10px;"></i>
                                     <a href="#" style="margin-right: 10px;">English</a>
                                     <a href="#">Indonesia</a>
                                 </div>
+                                -->
                             </div>
                         </div>
                     </div>

@@ -133,7 +133,7 @@
                     </div>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 font-weight-bold">User Profile</p>
+                            <p class="text-primary m-0 font-weight-bold">{{ __('User Profile') }}</p>
                         </div>
                         <div class="card-body">
                             <form method="POST" action="{{ route('profile.edit_profile') }}">
@@ -158,8 +158,8 @@
                                             <strong>{{ __('Gender') }}</strong>
                                             </label>
                                             <select class="form-control @error('gender') is-invalid @enderror custom-select" name="gender" id="gender">
-                                                <option value="laki-laki" {{ (empty(old('gender'))? ($user->gender == 'laki-laki'? 'selected' : '') : (old('gender')=='laki-laki' ? 'selected' : '')) }}>Male</option>
-                                                <option value="perempuan" {{ (empty(old('perempuan'))? ($user->gender == 'perempuan'? 'selected' : '') : (old('gender')=='perempuan' ? 'selected' : '')) }}>Female</option>
+                                                <option value="laki-laki" {{ (empty(old('gender'))? ($user->gender == 'laki-laki'? 'selected' : '') : (old('gender')=='laki-laki' ? 'selected' : '')) }}>{{ __('Male') }}</option>
+                                                <option value="perempuan" {{ (empty(old('perempuan'))? ($user->gender == 'perempuan'? 'selected' : '') : (old('gender')=='perempuan' ? 'selected' : '')) }}>{{ __('Female') }}</option>
                                             </select>
                                             @error('gender')
                                             <span class="invalid-feedback" role="alert">

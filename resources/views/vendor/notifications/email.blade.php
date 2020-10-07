@@ -51,8 +51,8 @@
 @isset($actionText)
 @slot('subcopy')
 @lang(
-    "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\n".
-    'into your web browser:',
+    "Jika kamu punya masalah untuk menekan tombol \":actionText\", copy dan paste URL berikut\n".
+    'ke browser anda',
     [
         'actionText' => $actionText,
     ]
