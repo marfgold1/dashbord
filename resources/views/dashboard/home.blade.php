@@ -1,14 +1,6 @@
 @extends('layouts.dashboard_general')
 
 @section('content')
-    @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{ session('success') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
     <div class="d-sm-flex justify-content-between align-items-center mb-4">
         <h3 class="text-dark mb-0">{{ __('Dashboard') }}</h3>
     </div>
@@ -94,7 +86,8 @@
                                 <h6 class="mb-0"><strong>{{ $webinar->nama }}</strong></h6>
                                 <div class="row">
                                     <div class="col">
-                                        <span class="text-xs">{{ $webinar->jadwal->toFormattedDateString() }}</span>
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span class="text-xs">{{ $webinar->jadwal->format('l, j F Y g:i A') }}</span>
                                     </div>
                                 </div>
                             </div>

@@ -1,12 +1,7 @@
 @extends('layouts.menu')
 
 @section('content')
-    <div class="p-5">
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
+    <div>
         <div class="text-center">
             <h4 class="text-dark mb-4">{{ __('Login') }}</h4>
         </div>

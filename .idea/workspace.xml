@@ -139,7 +139,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -149,6 +149,7 @@
       <recent name="C:\xampp\htdocs\aksitpb\resources\views\dashboard" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\aksitpb\resources\views\admin" />
       <recent name="C:\xampp\htdocs\aksitpb\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\aksitpb\resources\views\dashboard" />
       <recent name="C:\xampp\htdocs\aksitpb\resources\lang" />
@@ -168,7 +169,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601820287694</updated>
-      <workItem from="1601820288943" duration="99563000" />
+      <workItem from="1601820288943" duration="113728000" />
     </task>
     <servers />
   </component>
@@ -196,9 +197,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1602051238530" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602055085737">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1602082873804">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602055085737" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1602082873804" />
   </component>
 </project>

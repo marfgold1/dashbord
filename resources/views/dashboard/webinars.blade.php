@@ -2,21 +2,6 @@
 
 @section('content')
     <h3 class="text-dark mb-4">{{ __('Webinars') }}</h3>
-    @if(session('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>{{ session('success') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @elseif(session('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>{{ session('error') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
     @error('webinar')
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>{{ $message }}</strong>
@@ -27,7 +12,7 @@
     @enderror
     <div role="tablist" id="webinar-list">
         @forelse($webinars as $webinar)
-            <div class="card">
+            <div class="card shadow-sm">
                 <div class="card-header" role="tab">
                     <h5 class="mb-0">
                         @if($user->isRegisteredInWebinar($webinar))
@@ -56,27 +41,27 @@
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col my-2">
-                                <i class="fas fa-building mr-2 mb-2"></i>
+                            <div class="col-sm-6 mb-2">
+                                <i class="fas fa-building mr-2"></i>
                                 <strong class="mb-2">{{ __('Faculty') }}&nbsp;</strong>
-                                <p class="m-0 mb-2">{{ $webinar->fakultas }}</p>
+                                <p class="m-0">{{ $webinar->fakultas }}</p>
                             </div>
-                            <div class="col my-2">
+                            <div class="col-sm-6 mb-2">
                                 <i class="fas fa-list mr-2"></i>
                                 <strong>{{ __('Topic') }}&nbsp;</strong>
                                 <p class="m-0">{{ $webinar->topik }}</p>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col mb-2">
+                            <div class="col-sm-6 mb-2">
                                 <i class="fas fa-user-tie mr-2"></i>
                                 <strong>{{ __('Speaker') }}&nbsp;</strong>
                                 <p class="m-0">{{ $webinar->narasumber }}<br></p>
                             </div>
-                            <div class="col mb-2">
+                            <div class="col-sm-6 mb-2">
                                 <i class="fas fa-calendar-day mr-2"></i>
                                 <strong>{{ __('Schedule') }}&nbsp;</strong>
-                                <p class="m-0">{{ $webinar->jadwal }}<br></p>
+                                <p class="m-0">{{ $webinar->jadwal->format('l, j F Y g:i A') }}<br></p>
                             </div>
                         </div>
                         <hr>
@@ -89,7 +74,7 @@
                                         <p class="m-0">
                                             @php
                                                 $contacts=explode('-', $pic);
-                                                echo $contacts[0].': '.$contacts[2].' ('.$contacts[1].')';
+                                                echo htmlspecialchars($contacts[0].': '.$contacts[2].' ('.$contacts[1].')');
                                             @endphp
                                         </p>
                                     @endif
@@ -107,7 +92,7 @@
                                 <div class="col-sm-3 align-self-center">
                                     <i class="fas fa-clock mr-2"></i>
                                     <strong>{{ __('Registration Deadline') }}:&nbsp;</strong>
-                                    <span class="mr-2">{{ $webinar->batas_pendaftaran->diffForHumans() }}</span>
+                                    <span class="mr-2">{{ $webinar->batas_pendaftaran->diffForHumans() }} ({{ $webinar->batas_pendaftaran->format('l, j F Y g:i A') }})</span>
                                     <span class="badge badge-danger">{{  __('Closed') }}</span>
                                 </div>
                                 <div class="col align-self-center mt-sm-0 mt-2">
@@ -123,7 +108,7 @@
                                 <div class="col-sm-3 align-self-center">
                                     <i class="fas fa-clock mr-2"></i>
                                     <strong>{{ __('Registration Deadline') }}:&nbsp;</strong>
-                                    <span class="mr-2">{{ $webinar->batas_pendaftaran->diffForHumans() }}</span>
+                                    <span class="mr-2">{{ $webinar->batas_pendaftaran->diffForHumans() }} ({{ $webinar->batas_pendaftaran->format('l, j F Y g:i A') }})</span>
                                     <span class="badge badge-info">{{  __('Open') }}</span>
                                 </div>
                                 <div class="col align-self-center mt-sm-0 mt-2">
@@ -142,7 +127,7 @@
                                 <div class="col-sm-3 align-self-center">
                                     <i class="fas fa-clock mr-2"></i>
                                     <strong>{{ __('Registration Deadline') }}:&nbsp;</strong>
-                                    <span class="mr-2">{{ $webinar->batas_pendaftaran->diffForHumans() }}</span>
+                                    <span class="mr-2">{{ $webinar->batas_pendaftaran->diffForHumans() }} ({{ $webinar->batas_pendaftaran->format('l, j F Y g:i A') }})</span>
                                     <span class="badge badge-info">{{  __('Open') }}</span>
                                 </div>
                                 <div class="col align-self-center mt-sm-0 mt-2">
@@ -158,7 +143,7 @@
                                 <div class="col-sm-3 align-self-center">
                                     <i class="fas fa-clock mr-2"></i>
                                     <strong>{{ __('Registration Deadline') }}:&nbsp;</strong>
-                                    <span class="mr-2">{{ $webinar->batas_pendaftaran->diffForHumans() }}</span>
+                                    <span class="mr-2">{{ $webinar->batas_pendaftaran->diffForHumans() }} ({{ $webinar->batas_pendaftaran->format('l, j F Y g:i A') }})</span>
                                     <span class="badge badge-info">{{  __('Open') }}</span>
                                 </div>
                                 <div class="col align-self-center mt-sm-0 mt-2">

@@ -2,7 +2,7 @@
 
 @section('side-navbar')
     <nav class="navbar navbar-dark bg-dark align-items-start sidebar sidebar-dark accordion p-0 toggled" style="z-index: 10">
-        <div class="container-fluid d-flex flex-column p-0" style="transform: translateY(80px)">
+        <div id="sidebar" class="container-fluid d-flex flex-column p-0" style="transform: translateY(80px)">
             <ul class="nav navbar-nav" id="accordionSidebar">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.home') }}">
@@ -50,7 +50,7 @@
                         <div class="collapse" id="collapse-3">
                             <div class="bg-white border rounded py-2 collapse-inner">
                                 <a class="collapse-item" href="{{ route('admin.webinar.create') }}"><i class="fa fa-pencil"></i>&emsp;{{ __('Create Webinar') }}</a>
-                                <a class="collapse-item" href=""><i class="fa fa-cog"></i>&emsp;{{ __('Manage Webinar') }}</a>
+                                <a class="collapse-item" href="{{ route('admin.webinar.manage') }}"><i class="fa fa-cog"></i>&emsp;{{ __('Manage Webinar') }}</a>
                             </div>
                         </div>
                     </div>

@@ -49,67 +49,57 @@ class WebinarsController extends Controller
 
     public function create()
     {
+        $this->authorize('maintainer control');
         return view('admin.create_webinar');
+    }
+
+    public function validation(Request $request){
+        return $request->validate([
+            'nama' => 'required|string|max:255',
+            'deskripsi' => 'required|string|max:65535',
+            'topik' => 'required|string|max:255',
+            'fakultas' => 'required|string|max:255',
+            'narasumber' => 'required|string|max:255',
+            'pic' => 'required|string|regex:/^(\w+-\w+-\w+;)+$/|max:255',
+            'kuota' => 'required|numeric',
+            'jadwal' => 'required|date',
+            'batas_pendaftaran' => 'required|date',
+        ]);
     }
 
     public function store(Request $request)
     {
-        $req = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string|max:65535',
-            'topic' => 'required|string|max:255',
-            'faculty' => 'required|string|max:255',
-            'speaker' => 'required|string|max:255',
-            'pic' => 'required|string|regex:/(\w+-\w+-+\w+;+)+/|max:255',
-            'quota' => 'required|numeric',
-            'schedule' => 'required|date',
-            'deadline' => 'required|date',
-        ]);
-        $ins = Webinar::create([
-            'nama' => $req['name'],
-            'deskripsi' => $req['description'],
-            'topik' => $req['topic'],
-            'fakultas' => $req['faculty'],
-            'narasumber' => $req['speaker'],
-            'pic' => $req['pic'],
-            'kuota' => $req['quota'],
-            'jadwal' => $req['schedule'],
-            'batas_pendaftaran' => $req['deadline'],
-        ]);
+        $this->authorize('maintainer control');
+        $req = $this->validation($request);
+        $ins = Webinar::create($req);
         return back()->with('success', trans('You have successfully creating new webinar!'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Webinar  $webinar
-     * @return \Illuminate\Http\Response
-     */
+    public function manage()
+    {
+        $this->authorize('maintainer control');
+        $webinars = Webinar::paginate(2);
+        return view('admin.manage_webinars', [ 'webinars' => $webinars ]);
+    }
+
     public function edit(Webinar $webinar)
     {
-        //
+        $this->authorize('maintainer control');
+        return view('admin.edit_webinar', [ 'webinar' => $webinar ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Webinar  $webinar
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Webinar $webinar)
     {
-        //
+        $this->authorize('maintainer control');
+        $req = $this->validation($request);
+        $webinar->update($req);
+        return back()->with('success', trans('You have successfully updated ').$webinar->nama);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Webinar  $webinar
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Webinar $webinar)
     {
-        //
+        $this->authorize('maintainer control');
+        $webinar->delete();
+        return back()->with('success', trans('You have successfully deleted ').$webinar->nama);
     }
 }

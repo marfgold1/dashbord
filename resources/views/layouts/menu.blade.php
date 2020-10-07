@@ -13,6 +13,11 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="p-5">
+                                @if (session('status'))
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
+                                    </div>
+                                @endif
                                 @yield('content')
                                 <hr>
                                 <div class="d-flex d-sm-flex d-xl-flex justify-content-center align-items-center justify-content-sm-center align-items-sm-center justify-content-xl-center align-items-xl-center">
