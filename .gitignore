@@ -1,10 +1,11 @@
 /node_modules
 /public/hot
 /public/storage
+!/public/avatars/default.jpg
 /public/avatars
-!/public/default.jpg
 /storage/*.key
 /vendor
+/.idea
 .env
 .env.backup
 .phpunit.result.cache
