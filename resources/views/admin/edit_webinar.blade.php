@@ -114,7 +114,7 @@
                     <label for="schedule">
                         <strong>{{ __('Schedule') }}</strong><br />
                     </label>
-                    <input required class="form-control @error('jadwal') is-invalid @enderror" id="schedule" name="jadwal" type="datetime-local" value="{{ old('jadwal', $webinar->jadwal->format('Y-m-d\TH:i:s')) }}" />
+                    <input required class="form-control @error('jadwal') is-invalid @enderror" id="schedule" name="jadwal" type="datetime-local" value="{{ old('jadwal', $webinar->jadwal->format('Y-m-d\TH:i')) }}" />
                     @error('jadwal')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -127,7 +127,7 @@
                     <label for="deadline">
                         <strong>{{ __('Registration Deadline') }}</strong><br />
                     </label>
-                    <input required class="form-control @error('batas_pendaftaran') is-invalid @enderror" id="deadline" name="batas_pendaftaran" type="datetime-local" value="{{ old('batas_pendaftaran', $webinar->batas_pendaftaran->format('Y-m-d\TH:i:s')) }}" />
+                    <input required class="form-control @error('batas_pendaftaran') is-invalid @enderror" id="deadline" name="batas_pendaftaran" type="datetime-local" value="{{ old('batas_pendaftaran', $webinar->batas_pendaftaran->format('Y-m-d\TH:i')) }}" />
                     @error('batas_pendaftaran')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

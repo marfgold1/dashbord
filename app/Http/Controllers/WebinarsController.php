@@ -73,9 +73,9 @@ class WebinarsController extends Controller
     {
         $this->authorize('maintainer control');
         $req = $this->validation($request);
-        $req['creator_id'] = Auth::user()->id;
+        $req['creator_id'] = \Auth::user()->id;
         Webinar::create($req);
-        return back()->with('success', trans('You have successfully creating new webinar!'));
+        return back()->with('success', trans('You have successfully creating new webinar!').' '.$req['nama']);
     }
 
     public function manage()
@@ -89,7 +89,6 @@ class WebinarsController extends Controller
     {
         $this->authorize('maintainer control');
         $this->authorize('update-webinar', $webinar);
-        $user = Auth::user();
         return view('admin.edit_webinar', [ 'webinar' => $webinar ]);
     }
 

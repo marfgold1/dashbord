@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="h-100 w-100 m-0" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'TPB 2020') }} - Guest</title>
+    <title>{{ config('app.name', 'TPB 2020') }}</title>
     <meta name="description" content="Aksi TPB 2020">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -18,5 +18,4 @@
 </head>
 
 @yield('body')
-<script src="{{ asset('js/better-dateinput-polyfill.js') }}"
 </html>
