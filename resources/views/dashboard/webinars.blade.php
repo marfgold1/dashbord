@@ -36,7 +36,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col">
-                                <p class="card-text text-justify">{{!! nl2br(e($webinar->deskripsi)) !!}}<br></p>
+                                <p class="card-text text-justify">{!! nl2br(e($webinar->deskripsi)) !!}<br></p>
                             </div>
                         </div>
                         <hr>
