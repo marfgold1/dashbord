@@ -6,7 +6,7 @@
     </div>
     <div class="row">
         <div class="col-md-6 col-xl-3 mb-4" style="max-width: 100%;min-width: 100%;">
-            <div class="card shadow border-left-primary py-2" style="max-width: auto;">
+            <div class="card shadow border-left-primary py-2">
                 <div class="card-body">
                     <div class="row align-items-center no-gutters">
                         <div class="col mr-2">

@@ -5,7 +5,7 @@
         <div id="sidebar" class="container-fluid d-flex flex-column p-0" style="transform: translateY(80px)">
             <ul class="nav navbar-nav" id="accordionSidebar">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.home') }}">
+                    <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" href="{{ route('admin.home') }}">
                         <i class="fas fa-home"></i>
                         <span>{{ __('Admin Home') }}</span>
                     </a>
@@ -16,7 +16,7 @@
                     <p class="mb-0">{{ __('Admin Control') }}</p>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link {{ Request::path() === '' ? 'active' : '' }}" href="">
                         <i class="fas fa-users"></i>
                         <span>{{ __('General User') }}</span>
                     </a>
@@ -43,14 +43,14 @@
                 </div>
                 <li class="nav-item">
                     <div>
-                        <a class="btn btn-link nav-link" data-toggle="collapse" href="#collapse-3">
+                        <a class="btn btn-link nav-link {{ Request::is('admin/webinars*') ? 'active' : '' }}" data-toggle="collapse" href="#collapse-3">
                             <i class="fab fa-slideshare"></i>
                             <span>{{ __('Webinars') }}</span>
                         </a>
                         <div class="collapse" id="collapse-3">
                             <div class="bg-white border rounded py-2 collapse-inner">
-                                <a class="collapse-item" href="{{ route('admin.webinar.create') }}"><i class="fa fa-pencil"></i>&emsp;{{ __('Create Webinar') }}</a>
-                                <a class="collapse-item" href="{{ route('admin.webinar.manage') }}"><i class="fa fa-cog"></i>&emsp;{{ __('Manage Webinar') }}</a>
+                                <a class="collapse-item {{ Request::is('admin/webinars/create') ? 'active' : '' }}" href="{{ route('admin.webinar.create') }}"><i class="fa fa-pencil"></i>&emsp;{{ __('Create Webinar') }}</a>
+                                <a class="collapse-item {{ Request::is('admin/webinars/manage*') ? 'active' : '' }}" href="{{ route('admin.webinar.manage') }}"><i class="fa fa-cog"></i>&emsp;{{ __('Manage Webinar') }}</a>
                             </div>
                         </div>
                     </div>

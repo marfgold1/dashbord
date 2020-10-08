@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Webinar extends Model
 {
     protected $fillable = [
-        'nama', 'deskripsi', 'fakultas', 'narasumber', 'pic', 'kuota', 'jadwal', 'batas_pendaftaran', 'topik'
+        'nama', 'deskripsi', 'fakultas', 'narasumber', 'pic', 'kuota', 'jadwal', 'batas_pendaftaran', 'topik', 'creator_id'
     ];
 
     protected $dates = [
@@ -17,6 +17,10 @@ class Webinar extends Model
 
     public function users(){
         return $this->belongsToMany(User::class);
+    }
+
+    public function creator(){
+        return $this->belongsTo(User::class, 'creator_id');
     }
 
     public function count_pendaftar(){

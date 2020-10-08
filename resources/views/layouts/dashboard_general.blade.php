@@ -5,19 +5,19 @@
         <div id="sidebar" class="container-fluid d-flex flex-column p-0" style="transform: translateY(80px)">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard') }}">
+                    <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
                         <i class="fas fa-tachometer-alt"></i>
                         <span>{{ __('Dashboard') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profile.show') }}">
+                    <a class="nav-link {{ Request::is('dashboard/profile*') ? 'active' : '' }}" href="{{ route('profile.show') }}">
                         <i class="fas fa-user"></i>
                         <span>{{ __('Profile') }}</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('webinar.list') }}">
+                    <a class="nav-link {{ Request::is('dashboard/webinars') ? 'active' : '' }}" href="{{ route('webinar.list') }}">
                         <i class="fab fa-slideshare"></i>
                         <span>{{ __('Webinar') }}</span>
                     </a>

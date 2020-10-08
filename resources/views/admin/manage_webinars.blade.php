@@ -7,6 +7,9 @@
             <div class="card shadow-sm">
                 <div class="card-header" role="tab">
                     <h5 class="mb-0">
+                        @can('update-webinar', $webinar)
+                            <span class="badge badge-success ml-sm-2 mb-sm-0 mb-2">{{ __('Manageable') }}</span>
+                        @endcan
                         @if($webinar->isRegistrationClosed())
                             <span class="badge badge-secondary ml-sm-2 mb-sm-0 mb-2">{{ __('Closed') }}</span>
                         @elseif($webinar->isQuotaFull())
@@ -80,6 +83,7 @@
                         </div>
                         <hr>
                         <div class="row">
+                            @can('update-webinar', $webinar)
                             <div class="col-sm-6 align-self-center w-100 mb-2">
                                 <form method="GET" action="{{ route('admin.webinar.edit', [ 'webinar' => $webinar ]) }}">
                                     @csrf
@@ -92,6 +96,11 @@
                                     <button class="btn btn-danger w-100" type="submit">{{ __('Delete Webinar') }}</button>
                                 </form>
                             </div>
+                            @else
+                                <div class="col text-center w-100 mb-2">
+                                    <strong>{{ __('You are not eligible to manage this webinar.') }}</strong>
+                                </div>
+                            @endcan
                         </div>
                     </div>
                 </div>

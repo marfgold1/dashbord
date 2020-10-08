@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\User;
+use App\Webinar;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -29,6 +31,10 @@ class AuthServiceProvider extends ServiceProvider
             if ($user->hasPermission($ability)) {
                 return true;
             }
+        });
+        Gate::define('update-webinar', function(User $user, Webinar $webinar){
+            if($user->role->name == 'administrator') return true;
+            return $webinar->creator->is($user);
         });
     }
 }
