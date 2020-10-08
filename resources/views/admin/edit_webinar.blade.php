@@ -53,7 +53,7 @@
                     <label for="description">
                         <strong>{{ __('Description') }}</strong>
                     </label>
-                    <textarea required class="form-control @error('deskripsi') is-invalid @enderror" id="description" name="deskripsi">{{ old('deskripsi', $webinar->deskripsi) }}</textarea>
+                    <textarea required class="form-control @error('deskripsi') is-invalid @enderror" id="description" name="deskripsi" rows="6">{{ old('deskripsi', $webinar->deskripsi) }}</textarea>
                     @error('deskripsi')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
