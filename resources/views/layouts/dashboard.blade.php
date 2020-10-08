@@ -1,7 +1,7 @@
 @extends('layouts.head')
 
 @section('body')
-    <body id="page-top" class="sidebar-toggled">
+    <body id="page-top" class="sidebar-toggled w-100">
     <div id="wrapper">
         @yield('side-navbar')
         <div class="d-flex flex-column" id="content-wrapper">

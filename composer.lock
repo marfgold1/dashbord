@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f7f0bab3e45e66bec0f8ce73e5eff6ce",
+    "content-hash": "39edbb36f779deb5459396a8a2835a69",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2291,37 +2291,41 @@
             "time": "2020-08-18T17:17:46+00:00"
         },
         {
-            "name": "singlequote/laravel-cacher",
-            "version": "0.0.9",
+            "name": "rap2hpoutre/laravel-log-viewer",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/singlequote/laravel-cacher.git",
-                "reference": "9afffe4fce20c67ca8b789e03c164e5108f94fe0"
+                "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
+                "reference": "27392d29234b6ff38a456454558f4bcc40cc837a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/singlequote/laravel-cacher/zipball/9afffe4fce20c67ca8b789e03c164e5108f94fe0",
-                "reference": "9afffe4fce20c67ca8b789e03c164e5108f94fe0",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/27392d29234b6ff38a456454558f4bcc40cc837a",
+                "reference": "27392d29234b6ff38a456454558f4bcc40cc837a",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": ">=5",
-                "php": "^7.0"
+                "illuminate/support": "4.2.*|5.*|^6.0|^7.0|^8.0",
+                "php": ">=5.4.0"
             },
-            "type": "library",
+            "require-dev": {
+                "orchestra/testbench": "3.7.*",
+                "phpunit/phpunit": "^7"
+            },
+            "type": "laravel-package",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "SingleQuote\\Cacher\\CacherServiceProvider"
-                    ],
-                    "aliases": {
-                        "FileManager": "SingleQuote\\Cacher\\CacherFacade"
-                    }
+                        "Rap2hpoutre\\LaravelLogViewer\\LaravelLogViewerServiceProvider"
+                    ]
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "SingleQuote\\Cacher\\": "src"
+                "classmap": [
+                    "src/controllers"
+                ],
+                "psr-0": {
+                    "Rap2hpoutre\\LaravelLogViewer\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2330,77 +2334,20 @@
             ],
             "authors": [
                 {
-                    "name": "Wim Pruiksma",
-                    "email": "wim@quotec.nl",
-                    "homepage": "https://quotec.nl/",
-                    "role": "SEO"
+                    "name": "rap2hpoutre",
+                    "email": "raphaelht@gmail.com"
                 }
             ],
-            "description": "A powerfull cacher based on laravels file cache driver",
-            "homepage": "https://github.com/singlequote/laravel-cacher",
+            "description": "A Laravel log reader",
             "keywords": [
-                "cache",
-                "cacher",
                 "laravel",
-                "tags"
+                "log",
+                "log-reader",
+                "log-viewer",
+                "logging",
+                "lumen"
             ],
-            "time": "2020-07-01T15:06:45+00:00"
-        },
-        {
-            "name": "singlequote/laravel-datatables",
-            "version": "3.1.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/singlequote/Laravel-datatables.git",
-                "reference": "f7ca80566b896305e9ed18d101d447edabcc7117"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/singlequote/Laravel-datatables/zipball/f7ca80566b896305e9ed18d101d447edabcc7117",
-                "reference": "f7ca80566b896305e9ed18d101d447edabcc7117",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4",
-                "singlequote/laravel-cacher": "^0.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "SingleQuote\\DataTables\\DataTableServiceProvider"
-                    ],
-                    "aliases": {
-                        "DataTable": "SingleQuote\\DataTables\\DataTableFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SingleQuote\\DataTables\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Wim Pruiksma",
-                    "email": "wim@quotec.nl",
-                    "homepage": "https://www.quotec.nl/",
-                    "role": "Software Architect"
-                }
-            ],
-            "description": "This repo contains a Datatable that can render a filterable and sortable table. It aims to be very lightweight and easy to use. It has support for retrieving data asynchronously, pagination and recursive searching in relations",
-            "homepage": "https://github.com/singlequote/Laravel-datatables",
-            "keywords": [
-                "datatables",
-                "laravel",
-                "models",
-                "pagination"
-            ],
-            "time": "2020-09-02T07:21:25+00:00"
+            "time": "2020-09-08T12:21:27+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

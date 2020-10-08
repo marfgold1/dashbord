@@ -40,10 +40,12 @@ Route::post('/admin/webinars/store', 'WebinarsController@store')->name('admin.we
 Route::get('/admin/webinars/manage', 'WebinarsController@manage')->name('admin.webinar.manage');
 Route::get('/admin/webinars/manage/{webinar}/edit', 'WebinarsController@edit')->name('admin.webinar.edit');
 Route::post('/admin/webinars/manage/{webinar}/delete', 'WebinarsController@destroy')->name('admin.webinar.destroy');
+Route::get('/admin/webinars/manage/{webinar}/users', 'WebinarsController@edit')->name('admin.webinar.users');
 Route::post('/admin/webinars/manage/{webinar}/update', 'WebinarsController@update')->name('admin.webinar.update');
 
 Route::get('/admin', 'AdminController@home')->name('admin.home');
 
 Auth::routes(['verify' => true]);
 
+Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs')->middleware(['auth', 'isAdmin']);
 Route::get('/dashboard', 'HomeController@index')->name('dashboard')->middleware('verified');

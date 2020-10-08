@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="h-100 w-100 m-0" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="m-0 d-flex align-items-center" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">

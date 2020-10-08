@@ -1,7 +1,7 @@
 @extends('layouts.head')
 
 @section('body')
-<body class="bg-gradient-primary w-100 h-100 m-0 d-flex align-items-center">
+<body class="bg-gradient-primary w-100 m-0">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-9 col-lg-12 col-xl-10">
