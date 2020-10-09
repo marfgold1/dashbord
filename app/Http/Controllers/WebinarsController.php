@@ -21,6 +21,10 @@ class WebinarsController extends Controller
         return view('dashboard.webinars', [ 'webinars' => $webinars, 'user' => $user ]);
     }
 
+    public function registration(Webinar $webinar){
+        return view('admin', [ 'webinar' => $webinar ]);
+    }
+
     public function register(Request $request, Webinar $webinar){
         $request->validate([
             'webinar' => 'exists:webinars'

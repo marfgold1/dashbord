@@ -4,11 +4,6 @@
     <div class="text-center">
         <h4 class="text-dark mb-2">{{ __('Reset Password') }}</h4>
     </div>
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
     <form class="user" method="POST" action="{{ route('password.update') }}">
         @csrf
         <input type="hidden" name="token" value="{{ $token }}">

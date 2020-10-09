@@ -146,6 +146,23 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => 'Alamat Email',
+        'name' => 'Nama',
+        'password' => 'Kata Sandi',
+        'date_of_birth' => 'Tanggal Lahir',
+        'gender' => 'Jenis Kelamin',
+        'category' => 'Kategori',
+        'avatar' => 'Foto profil',
+        'nama'=> 'Nama',
+        'topik' => 'Topik',
+        'fakultas' => 'Fakultas',
+        'deskripsi' => 'Deskripsi',
+        'narasumber' => 'Pembicara',
+        'jadwal' => 'Jadwal',
+        'pic' => 'Person in Charge',
+        'batas_pendaftaran' => 'Tenggat waktu pendaftaran',
+        'kuota' => 'Kuota'
+    ],
 
 ];

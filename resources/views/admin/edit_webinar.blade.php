@@ -1,7 +1,11 @@
 @extends('layouts.dashboard_admin')
 
 @section('content')
-    <h3 class="text-dark mb-2">{{ __('Edit Webinar') }}</h3>
+    <a href="{{ route('admin.webinar.manage') }}">
+        <i class="fas fa-arrow-circle-left mr-2"></i>{{ __('Back') }}
+    </a>
+    <h3 class="text-dark">{{ __('Edit Webinar') }}</h3>
+    <h6 class="text-dark mb-4">{{ $webinar->nama }}</h6>
     <form method="POST" action="{{ route('admin.webinar.update', [ 'webinar' => $webinar ]) }}">
         @csrf
         <div class="form-row">
@@ -138,7 +142,9 @@
         </div>
         <div class="form-row">
             <div class="col">
-                <div class="form-group"><button class="btn btn-primary w-100" type="submit">{{ __('Edit Webinar') }}</button></div>
+                <div class="form-group">
+                    <button class="btn btn-primary w-100" type="submit">{{ __('Edit Webinar') }}</button>
+                </div>
             </div>
         </div>
     </form>

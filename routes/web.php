@@ -42,6 +42,8 @@ Route::get('/admin/webinars/manage/{webinar}/edit', 'WebinarsController@edit')->
 Route::post('/admin/webinars/manage/{webinar}/delete', 'WebinarsController@destroy')->name('admin.webinar.destroy');
 Route::get('/admin/webinars/manage/{webinar}/users', 'WebinarsController@edit')->name('admin.webinar.users');
 Route::post('/admin/webinars/manage/{webinar}/update', 'WebinarsController@update')->name('admin.webinar.update');
+Route::get('/admin/webinars/manage/{webinar}/registration/users', 'WebinarRegistrationController@userShow')->name('admin.webinar.registration.users');
+Route::post('/admin/webinars/manage/{webinar}/registration/users/unregister', 'WebinarRegistrationController@userUnregister')->name('admin.webinar.registration.users.unregister');
 
 Route::get('/admin', 'AdminController@home')->name('admin.home');
 
