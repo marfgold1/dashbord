@@ -134,8 +134,8 @@
                     <p id="modal-body"></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('Close') }}</button>
-                    <button type="submit" class="btn btn-danger" form="delete-webinar-form" onclick="this.disabled=true; this.form.submit();">{{ __('Delete Webinar') }}</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ __('No') }}</button>
+                    <button type="submit" class="btn btn-danger" form="delete-webinar-form" onclick="this.disabled=true; this.form.submit();">{{ __('Yes') }}</button>
                 </div>
             </div>
         </div>

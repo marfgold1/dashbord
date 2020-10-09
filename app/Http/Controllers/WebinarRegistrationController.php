@@ -44,6 +44,6 @@ class WebinarRegistrationController extends Controller
             'name' => 'required|string'
         ]);
         $webinar->users()->detach($req['id']);
-        return back()->with('success', trans('You have successfully unregistered').' '.$req['name']);
+        return back()->with('success', trans('You have successfully unregistered').' '.$req['name'].' '.trans('in').' '.$webinar->nama);
     }
 }
