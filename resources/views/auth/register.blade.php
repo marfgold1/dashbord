@@ -42,10 +42,10 @@
                    name="password_confirmation">
         </div>
         <div class="form-group">
-            <label for="date-of-birth">{{ __('Date of Birth') }}</label>
-            <input class="form-control form-control-user @error('date_of_birth') is-invalid @enderror"
-                   id="date-of-birth" type="date" name="date_of_birth" value="{{ old('date_of_birth') }}">
-            @error('date_of_birth')
+            <label for="age">{{ __('Age') }}</label>
+            <input class="form-control form-control-user @error('age') is-invalid @enderror"
+                   id="age" type="number" name="age" value="{{ old('age') }}">
+            @error('age')
             <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

@@ -20,7 +20,14 @@
                 <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="row align-items-center no-gutters">
-                                <h6 class="mb-0">{{ __('No Announcements') }}</h6>
+                                <div class="col-auto">
+                                    <span class="badge badge-danger">{{ __('Urgent') }}</span>
+                                    <h5 class="mb-0"><strong>Perubahan database profile</strong></h5>
+                                    <span class="text-sm">
+                                        Tanggal lahir diubah menjadi Umur. Semua pengguna yang terdaftar sudah otomatis diubah tanggal lahirnya menjadi umur (Tanggal lahir anda akan dihapus dari database)<br>
+                                        Terimakasih dan mohon maaf atas ketidaknyamanannya.
+                                    </span>
+                                </div>
                             </div>
                         </li>
                 </ul>
@@ -42,8 +49,7 @@
                     @forelse($user->webinars as $webinar)
                         <li class="list-group-item">
                             <div class="row align-items-center no-gutters">
-                                <div class="col-auto" style="padding-right: 0;"><img src="" style="margin-right: 10px;"></div>
-                                <div class="col-auto mr-2" style="margin-top: 10px;margin-bottom: 10px;">
+                                <div class="col-auto" style="margin-top: 10px;margin-bottom: 10px;">
                                     <span class="badge badge-primary">{{ $webinar->fakultas }}</span>
                                     <h6 class="mb-0"><strong>{{ $webinar->nama }}</strong></h6>
                                     <div class="row">

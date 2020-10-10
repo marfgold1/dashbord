@@ -125,14 +125,14 @@ class ProfileController extends Controller
 
     public function update_profile(Request $request){
         $req = $request->validate([
-            'date_of_birth' => ['required', 'date'],
+            'age' => ['required', 'numeric', 'min:10', 'max:100'],
             'gender' => ['required_with:laki-laki,perempuan', 'string'],
             'category' => ['required_with:pelajar,mahasiswa,umum', 'string']
         ]);
 
         $user = \Auth::user();
 
-        $user->date_of_birth = $req['date_of_birth'];
+        $user->age = $req['age'];
         $user->gender = $req['gender'];
         $user->category = $req['category'];
         $user->save();

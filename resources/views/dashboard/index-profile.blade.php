@@ -34,8 +34,8 @@
                     </div>
                     <div class="row">
                         <div class="col mb-1">
-                            <strong class="mr-2">{{ __('Date of Birth') }}:</strong>
-                            <span>{{ $user->date_of_birth }}</span>
+                            <strong class="mr-2">{{ __('Age') }}:</strong>
+                            <span>{{ $user->age }}</span>
                         </div>
                     </div>
                     <div class="row">
@@ -66,7 +66,7 @@
     </div>
     <div class="row mt-3">
         <div class="col d-flex">
-            <a class="btn btn-primary w-100" type="button" href="{{ route('profile.edit') }}">Edit Profile</a>
+            <a class="btn btn-primary w-100" type="button" href="{{ route('profile.edit') }}">{{ __('Edit Profile') }}</a>
         </div>
     </div>
 @endsection

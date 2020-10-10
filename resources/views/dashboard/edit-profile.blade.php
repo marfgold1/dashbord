@@ -141,11 +141,11 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="date-of-birth">
-                                                <strong>{{ __('Date of Birth') }}</strong><br>
+                                            <label for="age">
+                                                <strong>{{ __('Age') }}</strong><br>
                                             </label>
-                                            <input class="form-control @error('date_of_birth') is-invalid @enderror form-control-user" id="date-of-birth" type="date" name="date_of_birth" value="{{ old('date_of_birth', $user->date_of_birth) }}">
-                                            @error('date_of_birth')
+                                            <input class="form-control @error('age') is-invalid @enderror form-control-user" id="age" type="number" name="age" value="{{ old('age', $user->age) }}">
+                                            @error('age')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
