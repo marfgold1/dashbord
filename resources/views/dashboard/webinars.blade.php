@@ -15,10 +15,11 @@
             <div class="card shadow-sm">
                 <div class="card-header" role="tab">
                     <h5 class="mb-0">
+                        <span class="badge badge-info mb-sm-0 mb-2">{{ $webinar->kategori }}</span>
                         @if($user->isRegisteredInWebinar($webinar))
-                            <span class="badge badge-success mb-sm-0 mb-2">{{ __('Registered') }}</span>
+                            <span class="badge badge-success ml-sm-2 mb-sm-0 mb-2">{{ __('Registered') }}</span>
                         @else
-                            <span class="badge badge-danger mb-sm-0 mb-2">{{ __('Not Registered') }}</span>
+                            <span class="badge badge-danger ml-sm-2 mb-sm-0 mb-2">{{ __('Not Registered') }}</span>
                         @endif
                         @if($webinar->isRegistrationClosed())
                             <span class="badge badge-secondary ml-sm-2 mb-sm-0 mb-2">{{ __('Closed') }}</span>
@@ -35,12 +36,6 @@
                 <div class="collapse hide item-{{ $webinar->id }}" role="tabpanel" data-parent="#webinar-list">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col">
-                                <p class="card-text text-justify">{!! nl2br(e($webinar->deskripsi)) !!}<br></p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
                             <div class="col-sm-6 mb-2">
                                 <i class="fab fa-slideshare mr-2"></i>
                                 <strong class="mb-2">{{ __('Category') }}&nbsp;</strong>
@@ -50,6 +45,12 @@
                                 <i class="fas fa-desktop mr-2"></i>
                                 <strong>{{ __('Platform') }}&nbsp;</strong>
                                 <p class="m-0">{{ $webinar->platform }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-text text-justify">{!! nl2br(e($webinar->deskripsi)) !!}<br></p>
                             </div>
                         </div>
                         <hr>
