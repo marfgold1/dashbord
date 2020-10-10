@@ -53,7 +53,7 @@
                     </td>
                 </tr>
             @empty
-            {{ __('There is no user registered to this webinar or no matching user') }}
+                <caption>{{ __('There is no user registered to this webinar or no matching user') }}</caption>
             @endforelse
             </tbody>
         </table>

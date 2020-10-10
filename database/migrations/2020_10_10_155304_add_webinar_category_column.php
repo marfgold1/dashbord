@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddWebinarCreatorColumn extends Migration
+class AddWebinarCategoryColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class AddWebinarCreatorColumn extends Migration
     public function up()
     {
         Schema::table('webinars', function (Blueprint $table){
-            $table->unsignedBigInteger('creator_id')->nullable();
-            $table->foreign('creator_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->string('kategori')->default('Webinar');
+            $table->string('platform')->default('Zoom');
         });
     }
 
@@ -27,8 +27,8 @@ class AddWebinarCreatorColumn extends Migration
     public function down()
     {
         Schema::table('webinars', function (Blueprint $table){
-            $table->dropForeign(['creator_id']);
-            $table->dropColumn('creator_id');
+            $table->dropColumn('kategori');
+            $table->dropColumn('platform');
         });
     }
 }

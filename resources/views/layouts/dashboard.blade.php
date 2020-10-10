@@ -49,6 +49,8 @@
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             -->
+                            <li class="nav-item flex-nowrap ml-auto">
+                            </li>
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow">
                                     <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">

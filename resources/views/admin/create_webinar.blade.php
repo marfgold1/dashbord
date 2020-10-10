@@ -35,6 +35,34 @@
         <div class="form-row">
             <div class="col">
                 <div class="form-group">
+                    <label for="kategori">
+                        <strong>{{ __('Category') }}</strong><br />
+                    </label>
+                    <input required type="text" class="form-control @error('kategori') is-invalid @enderror" id="kategori" name="kategori" value="{{ old('kategori', 'Webinar') }}" />
+                    @error('kategori')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label for="platform">
+                        <strong>{{ __('Platform') }}</strong><br />
+                    </label>
+                    <input required type="text" class="form-control @error('platform') is-invalid @enderror" id="platform" name="platform" value="{{ old('platform', 'Zoom') }}" />
+                    @error('platform')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <div class="form-group">
                     <label for="topic">
                         <strong>{{ __('Topic') }}</strong>
                     </label>

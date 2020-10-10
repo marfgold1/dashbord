@@ -32,6 +32,19 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-6 mb-2">
+                                <i class="fab fa-slideshare mr-2"></i>
+                                <strong class="mb-2">{{ __('Category') }}&nbsp;</strong>
+                                <p class="m-0">{{ $webinar->kategori }}</p>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <i class="fas fa-desktop mr-2"></i>
+                                <strong>{{ __('Platform') }}&nbsp;</strong>
+                                <p class="m-0">{{ $webinar->platform }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6 mb-2">
                                 <i class="fas fa-building mr-2"></i>
                                 <strong class="mb-2">{{ __('Faculty') }}&nbsp;</strong>
                                 <p class="m-0">{{ $webinar->fakultas }}</p>

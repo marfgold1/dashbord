@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Webinar extends Model
 {
     protected $fillable = [
-        'nama', 'deskripsi', 'fakultas', 'narasumber', 'pic', 'kuota', 'jadwal', 'batas_pendaftaran', 'topik', 'creator_id'
+        'nama', 'deskripsi', 'fakultas', 'narasumber', 'pic', 'kuota', 'jadwal', 'batas_pendaftaran', 'topik', 'creator_id', 'kategori', 'platform'
     ];
 
     protected $dates = [

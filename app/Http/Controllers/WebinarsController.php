@@ -70,6 +70,8 @@ class WebinarsController extends Controller
             'kuota' => 'required|numeric',
             'jadwal' => 'required|date',
             'batas_pendaftaran' => 'required|date',
+            'kategori' => 'required|string|max:255',
+            'platform' => 'required|string|max:255'
         ]);
     }
 
