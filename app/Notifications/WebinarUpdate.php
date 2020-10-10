@@ -42,12 +42,11 @@ class WebinarUpdate extends Notification
     {
         return (new MailMessage)
             ->subject('Webinar Update')
-            ->greeting('Halo!')
-            ->line('Terimakasih sudah mendaftar di webinar kami.')
-            ->line('Sayang sekali terjadi perubahan untuk webinar yang akan dilakukan.')
-            ->line('Supaya tidak ketinggalan informasi, silahkan cek halaman webinar ya!')
-            ->action('Cek Webinar', route('webinar.list'))
-            ->line('Terimakasih atas waktunya!');
+            ->greeting('Halo, '.$notifiable->name)
+            ->line('Terimakasih sudah mendaftar di webinar STEI Private : NO DATA IS SAFE.')
+            ->line('Sekedar pemberitahuan, webinar akan diselenggarakan besok pada tanggal 11 Oktober 2020.')
+            ->line('Link webinar serta virtual background akan dikirimkan kurang lebih satu jam sebelum dimulai acara (7:45 AM)')
+            ->line('Terimakasih atas perhatiannya~');
     }
 
     /**

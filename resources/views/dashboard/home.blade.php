@@ -30,6 +30,18 @@
                                 </div>
                             </div>
                         </li>
+                    <li class="list-group-item">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-auto">
+                                <span class="badge badge-info">{{ __('Info') }}</span>
+                                <h5 class="mb-0"><strong>Pengumuman link webinar STEI</strong></h5>
+                                <span class="text-sm">
+                                    Link webinar STEI akan diumumkan via email 1 jam sebelum acara dimulai (7:45 AM)<br>
+                                    Silahkan cek email anda
+                                </span>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,7 +62,7 @@
                         <li class="list-group-item">
                             <div class="row align-items-center no-gutters">
                                 <div class="col-auto" style="margin-top: 10px;margin-bottom: 10px;">
-                                    <span class="badge badge-primary">{{ $webinar->fakultas }}</span>
+                                    <span class="badge badge-primary text-wrap">{{ $webinar->fakultas }}</span>
                                     <h6 class="mb-0"><strong>{{ $webinar->nama }}</strong></h6>
                                     <div class="row">
                                         <div class="col">
