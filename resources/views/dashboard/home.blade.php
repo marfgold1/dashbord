@@ -18,18 +18,7 @@
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col-auto">
-                                    <span class="badge badge-danger">{{ __('Urgent') }}</span>
-                                    <h5 class="mb-0"><strong>Perubahan database profile</strong></h5>
-                                    <span class="text-sm">
-                                        Tanggal lahir diubah menjadi Umur. Semua pengguna yang terdaftar sudah otomatis diubah tanggal lahirnya menjadi umur (Tanggal lahir anda akan dihapus dari database)<br>
-                                        Terimakasih dan mohon maaf atas ketidaknyamanannya.
-                                    </span>
-                                </div>
-                            </div>
-                        </li>
+                    <!--
                     <li class="list-group-item">
                         <div class="row align-items-center no-gutters">
                             <div class="col-auto">
@@ -42,6 +31,12 @@
                             </div>
                         </div>
                     </li>
+                    -->
+                        <li class="list-group-item">
+                            <div class="row align-items-center no-gutters">
+                                <h6 class="mb-0">Tidak ada pengumuman</h6>
+                            </div>
+                        </li>
                 </ul>
             </div>
         </div>
@@ -53,7 +48,7 @@
                             <i class="fa fa-slideshare"></i>
                         </div>
                         <div class="col d-lg-flex align-items-lg-center" style="padding: 0;">
-                            <h6 class="text-primary d-lg-flex font-weight-bold m-0">{{ __('Registered Webinars') }}</h6>
+                            <h6 class="text-primary d-lg-flex font-weight-bold m-0">{{ __('Upcoming Registered Webinars') }}</h6>
                         </div>
                     </div>
                 </div>

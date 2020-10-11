@@ -14,7 +14,7 @@
                 <li class="nav-item"><a class="nav-link {{ Request::is('admin/webinars/manage/*/registration/data') ? 'active disabled' : '' }}" href="{{ route('admin.webinar.registration.data', $webinar->id) }}">{{ __('Download Data') }}</a></li>
             </ul>
         </div>
-        <div class="card-body text-truncate">
+        <div class="card-body">
             @yield('card-content')
         </div>
     </div>
