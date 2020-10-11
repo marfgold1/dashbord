@@ -9,8 +9,8 @@
     <div class="card shadow-sm">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item"><a class="nav-link active" href="#">{{ __('Registered Users') }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">{{ __('Send Email') }}</a></li>
+                <li class="nav-item"><a class="nav-link {{ Request::is('admin/webinars/manage/*/registration/users') ? 'active' : '' }}" href="{{ route('admin.webinar.registration.users', $webinar->id) }}">{{ __('Registered Users') }}</a></li>
+                <li class="nav-item"><a class="nav-link {{ Request::is('admin/webinars/manage/*/registration/email') ? 'active' : '' }}" href="{{ route('admin.webinar.registration.email', $webinar->id) }}">{{ __('Send Email') }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">{{ __('Download Data') }}</a></li>
             </ul>
         </div>

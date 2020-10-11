@@ -11,14 +11,15 @@ class WebinarUpdate extends Notification
 {
     use Queueable;
 
+    protected $details;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($details)
     {
-        //
+        $this->details = $details;
     }
 
     /**
@@ -40,13 +41,23 @@ class WebinarUpdate extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
-            ->subject('Webinar Update')
-            ->greeting('Halo, '.$notifiable->name)
-            ->line('Terimakasih sudah mendaftar di webinar STEI Private : NO DATA IS SAFE.')
-            ->line('Sekedar pemberitahuan, webinar akan diselenggarakan besok pada tanggal 11 Oktober 2020.')
-            ->line('Link webinar serta virtual background akan dikirimkan kurang lebih satu jam sebelum dimulai acara (7:45 AM)')
-            ->line('Terimakasih atas perhatiannya~');
+        $param = [
+            '$username' =>  $notifiable->name,
+            '$webinarname' => $this->details['webinar_name'],
+        ];
+        $mail = (new MailMessage)->subject(strtr($this->details['subject'], $param));
+        if(isset($this->details['greeting']))
+            $mail->greeting(strtr($this->details['greeting'], $param));
+        $lines = explode("\n",$this->details['message']);
+        foreach ($lines as $line)
+            $mail->line(strtr($line, $param));
+        if(isset($this->details['action_name']))
+            $mail->action(strtr($this->details['action_name'], $param), $this->details['action_url']);
+        if(isset($this->details['salutation']))
+            $mail->salutation(strtr($this->details['salutation'], $param));
+        if(isset($this->details['attachment']))
+            $mail->attach($this->details['attachment'], ['as'=>$this->details['attachment_name'], 'mime'=>$this->details['attachment_mime']]);
+        return $mail;
     }
 
     /**
