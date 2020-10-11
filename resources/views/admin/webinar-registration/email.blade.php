@@ -2,13 +2,17 @@
 
 @section('card-content')
     <div role="alert" class="alert alert-danger text-wrap">
+        <span>Mohon maaf fitur email tidak tersedia akibat limit email dari server. Mohon maaf atas ketidaknyamanannya..</span>
+    </div>
+    <div hidden>
+    <div role="alert" class="alert alert-danger text-wrap">
         <span>Form ini akan dikirimkan ke semua peserta yang terdaftar di webinar ini. Kamu bisa menggunakan fasilitas ini untuk memberitahu mereka tentang webinar (link meet, donasi, dkk), hanya saja tolong jangan spam mereka ya :D<br/>PS: Kamu akan menerima email jika ada kesalahan atau semua email berhasil terkirim.<br/></span>
     </div>
     <div
         role="alert" class="alert alert-info text-wrap">
         <span>Kamu bisa memakai <strong>$username</strong> (nama peserta) dan <strong>$webinarname</strong> (nama webinar)</span>
     </div>
-    <form action="{{ route('admin.webinar.registration.email.send', [ 'webinar' => $webinar ]) }}" method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="subject">Judul</label>
@@ -99,10 +103,12 @@
             <button class="btn btn-primary" type="submit" id="btn-submit">Kirim</button>
         </div>
     </form>
+    </div>
 @endsection
 
 @section('custom-script')
     <script>
+        /*
         function check(){
             var val = $(this).prop('checked');
             var data = this.id.split('-')[1];
@@ -127,10 +133,11 @@
                 }
             });
             console.log(query);
-            window.open('{{ route('admin.webinar.registration.email.preview', [ 'webinar' => $webinar ]) }}'+query, '_blank');
+            window.open(''+query, '_blank');
         });
         $('#btn-submit').click(function () {
             this.enabled = false;
         });
+        */
     </script>
 @endsection

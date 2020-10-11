@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WebinarMail;
 use App\Notifications\WebinarUpdate;
-use App\User;
 use App\Webinar;
 use Illuminate\Http\Request;
-use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
-use PhpOffice\PhpSpreadsheet\Calculation\Web;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class WebinarRegistrationController extends Controller
 {
@@ -53,6 +54,44 @@ class WebinarRegistrationController extends Controller
     public function emailShow(Webinar $webinar){
         $this->validateWebinarOwnership($webinar);
         return view('admin.webinar-registration.email', [ 'webinar' => $webinar ]);
+    }
+
+    public function dataShow(Webinar $webinar){
+        $this->validateWebinarOwnership($webinar);
+        return view('admin.webinar-registration.data', [ 'webinar' => $webinar ]);
+    }
+
+    public function dataDownload(Request $request, Webinar $webinar){
+        $this->validateWebinarOwnership($webinar);
+        $req = $request->json();
+        $colnames = $req->get('name');
+        $users = $webinar->users;
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $col = 'A';
+        $i = 0;
+        $sheet->setCellValue('A1', 'No');
+        foreach($colnames as $colname){
+            $sheet->setCellValue(++$col.'1', $colnames[$i++]);
+        }
+        $i = 1;
+        foreach($users as $user){
+            $col = 'A';
+            $i++;
+            $sheet->setCellValue($col++.$i, ($i-1));
+            foreach($colnames as $colname)
+                $sheet->setCellValue($col++.$i, $user[$colname]);
+        }
+        $writer = new Xlsx($spreadsheet);
+        $response =  new StreamedResponse(
+            function () use ($writer) {
+                $writer->save('php://output');
+            }
+        );
+        $response->headers->set('Content-Type', 'application/vnd.ms-excel');
+        $response->headers->set('Content-Disposition', 'attachment;filename="ExportScan.xls"');
+        $response->headers->set('Cache-Control','max-age=0');
+        return $response;
     }
 
     public function emailPreview(Request $request, Webinar $webinar){
@@ -101,7 +140,7 @@ class WebinarRegistrationController extends Controller
         }
         $details['webinar_name'] = $webinar->nama;
         $users = $webinar->users;
-        \Notification::send($users, new WebinarUpdate($details));
+        \Mail::to(Auth::user())->bcc($users)->send(new WebinarMail($details));
         return back()->with('success', 'Email anda berhasil terkirim!');
     }
 }

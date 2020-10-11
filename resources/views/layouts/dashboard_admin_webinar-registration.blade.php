@@ -9,9 +9,9 @@
     <div class="card shadow-sm">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item"><a class="nav-link {{ Request::is('admin/webinars/manage/*/registration/users') ? 'active' : '' }}" href="{{ route('admin.webinar.registration.users', $webinar->id) }}">{{ __('Registered Users') }}</a></li>
-                <li class="nav-item"><a class="nav-link {{ Request::is('admin/webinars/manage/*/registration/email') ? 'active' : '' }}" href="{{ route('admin.webinar.registration.email', $webinar->id) }}">{{ __('Send Email') }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">{{ __('Download Data') }}</a></li>
+                <li class="nav-item"><a class="nav-link {{ Request::is('admin/webinars/manage/*/registration/users') ? 'active disabled' : '' }}" href="{{ route('admin.webinar.registration.users', $webinar->id) }}">{{ __('Registered Users') }}</a></li>
+                <li class="nav-item"><a class="nav-link {{ Request::is('admin/webinars/manage/*/registration/email') ? 'active disabled' : '' }}" href="{{ route('admin.webinar.registration.email', $webinar->id) }}">{{ __('Send Email') }}</a></li>
+                <li class="nav-item"><a class="nav-link {{ Request::is('admin/webinars/manage/*/registration/data') ? 'active disabled' : '' }}" href="{{ route('admin.webinar.registration.data', $webinar->id) }}">{{ __('Download Data') }}</a></li>
             </ul>
         </div>
         <div class="card-body text-truncate">
